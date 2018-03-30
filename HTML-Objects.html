@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="/static/fontawesome/fontawesome-all.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Objects In School</title>
+    <script src="objects.js"></script>
+    <script src="actions.js"></script>
+    <script src="data.js"></script>
+    <link rel="stylesheet" href="CSS-Objects.css"/>
+</head>
+
+<body onload="makeLists()">
+<h2> Stonebrae's Elementary School System <img src="images/images.png"> Go Huskies!!</h2>
+<h5> Click on boxes to pull up info</h5>
+<hr>
+<hr>
+<h2> Find Student, Section or Teacher</h2>
+<i class="fa fa-list fa-5x" aria-hidden="true" onclick="showList()"></i>
+<button  id = "listButton" onclick="listItems()">Lay Out Objects!</button>
+<div id="Selector" style="display: none;">
+<select  id="list">
+    <option value="0">Students</option>
+    <option value="1">Teachers</option>
+    <option value="2">Sections</option>
+</select>
+<div id="listOutput"></div>
+<div id="input"></div>
+    <div id="output"></div>
+</div>
+
+
+
+    <h2> Add Teacher, Student To Section</h2>
+<i class="fa fa-random fa-5x" id="random" aria-hidden="true" onclick="showAdd()"></i>
+<p id="selectBox"  onload="makeLists()">
+    Select Student: <select id="studentList"></select>
+
+    Select Section: <select id="sectionList"></select>
+
+    <button type="button" onclick="addStudentToSection()"> Add Student To Section</button>
+
+    <br>
+    Select Teacher: <select id="teacherList"></select>
+
+    Select Section: <select id="sectionList2"></select>
+    <button type="button"  onclick="addTeacherToSection()"> Add Teacher To Section</button>
+    <br>
+    <div id="bad"></div>
+
+</p>
+
+
+
+    <h2> Add Teacher, Section, Student To School/System</h2>
+    <i class="fa fa-plus fa-5x" aria-hidden="true" onclick="add()"></i>
+    <div id="addT" >
+    <p id="addStudents">
+        <br>
+        <input id="firstNameStudent" type="text" placeholder="First Name">
+        <input id="lastNameStudent" type="text" placeholder="Last Name">
+        <input id="studentGrade" type="text" placeholder="Grade">
+        <button type="button" onclick="addStudents();document.getElementById('selectBox').style.visibility='hidden'">Add Student</button>
+
+
+    </p>
+
+    <p id="addTeachers">
+        <input id="firstNameTeacher" type="text" placeholder="First Name">
+        <input id="lastNameTeacher" type="text" placeholder="Last Name">
+        <input id="teacherSubject" type="text" placeholder="Subject">
+        <button type="button"  onclick="addTeachers()"> Add Teacher</button>
+
+    </p>
+
+    <p id="addSections">
+        <input id="sectionName" type="text" placeholder="Section Name">
+        <input id="sectionCount" type="text" placeholder="Section Count">
+        <button type="button"  onclick="addSections()"> Add Section</button>
+
+    </p>
+        <div id="added"></div>
+    </div>
+
+
+
+
+<h2> Remove Teacher, Student From Section</h2>
+<i class="fa fa-times-circle fa-5x" aria-hidden="true" onclick="showRemove()"></i>
+<div id="removed">
+    Select Student: <select id="studentList2"></select>
+
+    Select Section: <select id="sectionList3"></select>
+    <button type="button"  onclick="removeStudentFromSection()"> Remove Student</button>
+    <div id="wrong"></div>
+    <br>
+
+    Select Teacher: <select id="teacherList2"></select>
+
+    Select Section: <select id="sectionList4"></select>
+    <button type="button"  onclick="removeTeacherFromSection()"> Remove Teacher</button>
+
+</div>
+
+
+
+
+
+</body>
+</html>
